@@ -1,0 +1,198 @@
+[gd_scene load_steps=17 format=3 uid="uid://b0p06ncfjx8sb"]
+
+[ext_resource type="Texture2D" uid="uid://dawpldxmw6ww4" path="res://image/machines/etagere/etagere.png" id="1_bu3as"]
+[ext_resource type="Script" path="res://scripte/etagere.gd" id="1_vq430"]
+[ext_resource type="Texture2D" uid="uid://bvc32jw7cvhi5" path="res://image/machines/etagere/ecran_selection/icone.png" id="3_a15jf"]
+[ext_resource type="Script" path="res://scripte/area_icone_1.gd" id="3_kydcr"]
+[ext_resource type="Script" path="res://scripte/area_icone_2.gd" id="5_p8s6k"]
+[ext_resource type="Script" path="res://scripte/area_icone_3.gd" id="6_4mqa4"]
+[ext_resource type="Script" path="res://scripte/area_icone_4.gd" id="7_kbnfk"]
+[ext_resource type="Script" path="res://scripte/area_icone_5.gd" id="8_pfx4p"]
+[ext_resource type="Script" path="res://scripte/area_icone_6.gd" id="9_t1gsi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wldf"]
+size = Vector2(127, 194)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1gaw"]
+size = Vector2(40, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cijo"]
+size = Vector2(40, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4m1c"]
+size = Vector2(40, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3axnd"]
+size = Vector2(40, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkp3i"]
+size = Vector2(41, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4tlw"]
+size = Vector2(40, 42)
+
+[node name="etagere" type="Area2D"]
+script = ExtResource("1_vq430")
+
+[node name="Sprite_etagere" type="Sprite2D" parent="."]
+texture = ExtResource("1_bu3as")
+
+[node name="Collision_etagere" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_4wldf")
+debug_color = Color(0.901064, 0.220412, 0.55415, 0.42)
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+offset_left = -65.0
+offset_top = -96.0
+offset_right = 63.0
+offset_bottom = 96.0
+
+[node name="Sprite_item_1" type="Sprite2D" parent="BoxContainer"]
+position = Vector2(30.3162, 25.8449)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite_item_2" type="Sprite2D" parent="BoxContainer"]
+position = Vector2(64.75, 25.25)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite_item_3" type="Sprite2D" parent="BoxContainer"]
+position = Vector2(101.75, 24.75)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite_item_4" type="Sprite2D" parent="BoxContainer"]
+position = Vector2(23.7591, 121.7)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite_item_5" type="Sprite2D" parent="BoxContainer"]
+position = Vector2(64.9631, 121.7)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite_item_6" type="Sprite2D" parent="BoxContainer"]
+position = Vector2(104.163, 120.364)
+scale = Vector2(0.5, 0.5)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+visible = false
+z_index = 2
+
+[node name="Area_icone_1" type="Area2D" parent="CanvasGroup"]
+script = ExtResource("3_kydcr")
+
+[node name="zone_inter_1" type="CollisionShape2D" parent="CanvasGroup/Area_icone_1"]
+z_index = 1
+position = Vector2(87, -74)
+shape = SubResource("RectangleShape2D_d1gaw")
+debug_color = Color(0.957426, 5.77569e-07, 0.532635, 0.42)
+
+[node name="icoone_1" type="Sprite2D" parent="CanvasGroup/Area_icone_1"]
+position = Vector2(87, -74)
+texture = ExtResource("3_a15jf")
+
+[node name="icoone_sprite_1" type="Sprite2D" parent="CanvasGroup/Area_icone_1/icoone_1"]
+
+[node name="Area_icone_2" type="Area2D" parent="CanvasGroup"]
+script = ExtResource("5_p8s6k")
+
+[node name="zone_inter_2" type="CollisionShape2D" parent="CanvasGroup/Area_icone_2"]
+z_index = 1
+position = Vector2(133, -74)
+shape = SubResource("RectangleShape2D_4cijo")
+debug_color = Color(0.957426, 5.77569e-07, 0.532635, 0.42)
+
+[node name="icoone_2" type="Sprite2D" parent="CanvasGroup/Area_icone_2"]
+position = Vector2(133, -74)
+texture = ExtResource("3_a15jf")
+
+[node name="icoone_sprite_2" type="Sprite2D" parent="CanvasGroup/Area_icone_2/icoone_2"]
+
+[node name="Area_icone_3" type="Area2D" parent="CanvasGroup"]
+script = ExtResource("6_4mqa4")
+
+[node name="zone_inter_3" type="CollisionShape2D" parent="CanvasGroup/Area_icone_3"]
+z_index = 1
+position = Vector2(179, -74)
+shape = SubResource("RectangleShape2D_m4m1c")
+debug_color = Color(0.957426, 5.77569e-07, 0.532635, 0.42)
+
+[node name="icoone_3" type="Sprite2D" parent="CanvasGroup/Area_icone_3"]
+position = Vector2(179, -74)
+texture = ExtResource("3_a15jf")
+
+[node name="icoone_sprite_3" type="Sprite2D" parent="CanvasGroup/Area_icone_3/icoone_3"]
+
+[node name="Area_icone_4" type="Area2D" parent="CanvasGroup"]
+script = ExtResource("7_kbnfk")
+
+[node name="zone_inter_4" type="CollisionShape2D" parent="CanvasGroup/Area_icone_4"]
+z_index = 1
+position = Vector2(87, -27)
+shape = SubResource("RectangleShape2D_3axnd")
+debug_color = Color(0.957426, 5.77569e-07, 0.532635, 0.42)
+
+[node name="icoone_4" type="Sprite2D" parent="CanvasGroup/Area_icone_4"]
+position = Vector2(87, -27)
+texture = ExtResource("3_a15jf")
+
+[node name="icoone_sprite_4" type="Sprite2D" parent="CanvasGroup/Area_icone_4/icoone_4"]
+
+[node name="Area_icone_5" type="Area2D" parent="CanvasGroup"]
+script = ExtResource("8_pfx4p")
+
+[node name="zone_inter_5" type="CollisionShape2D" parent="CanvasGroup/Area_icone_5"]
+z_index = 1
+position = Vector2(133.5, -27)
+shape = SubResource("RectangleShape2D_dkp3i")
+debug_color = Color(0.957426, 5.77569e-07, 0.532635, 0.42)
+
+[node name="icoone_5" type="Sprite2D" parent="CanvasGroup/Area_icone_5"]
+position = Vector2(133, -27)
+texture = ExtResource("3_a15jf")
+
+[node name="icoone_sprite_5" type="Sprite2D" parent="CanvasGroup/Area_icone_5/icoone_5"]
+
+[node name="Area_icone_6" type="Area2D" parent="CanvasGroup"]
+script = ExtResource("9_t1gsi")
+
+[node name="zone_inter_6" type="CollisionShape2D" parent="CanvasGroup/Area_icone_6"]
+z_index = 1
+position = Vector2(179, -27)
+shape = SubResource("RectangleShape2D_s4tlw")
+debug_color = Color(0.957426, 5.77569e-07, 0.532635, 0.42)
+
+[node name="icoone_6" type="Sprite2D" parent="CanvasGroup/Area_icone_6"]
+position = Vector2(179, -27)
+texture = ExtResource("3_a15jf")
+
+[node name="icoone_sprite_6" type="Sprite2D" parent="CanvasGroup/Area_icone_6/icoone_6"]
+
+[connection signal="item_1" from="." to="CanvasGroup/Area_icone_1" method="_on_etagere_item_1"]
+[connection signal="item_2" from="." to="CanvasGroup/Area_icone_2" method="_on_etagere_item_2"]
+[connection signal="item_3" from="." to="CanvasGroup/Area_icone_3" method="_on_etagere_item_3"]
+[connection signal="item_4" from="." to="CanvasGroup/Area_icone_4" method="_on_etagere_item_4"]
+[connection signal="item_5" from="." to="CanvasGroup/Area_icone_5" method="_on_etagere_item_5"]
+[connection signal="item_6" from="." to="CanvasGroup/Area_icone_6" method="_on_etagere_item_6"]
+[connection signal="obj_remove_1" from="." to="CanvasGroup/Area_icone_1" method="_on_etagere_obj_remove_1"]
+[connection signal="obj_remove_2" from="." to="CanvasGroup/Area_icone_2" method="_on_etagere_obj_remove_2"]
+[connection signal="obj_remove_3" from="." to="CanvasGroup/Area_icone_3" method="_on_etagere_obj_remove_3"]
+[connection signal="obj_remove_4" from="." to="CanvasGroup/Area_icone_4" method="_on_etagere_obj_remove_4"]
+[connection signal="obj_remove_5" from="." to="CanvasGroup/Area_icone_5" method="_on_etagere_obj_remove_5"]
+[connection signal="obj_remove_6" from="." to="CanvasGroup/Area_icone_6" method="_on_etagere_obj_remove_6"]
+[connection signal="input_event" from="CanvasGroup/Area_icone_1" to="." method="_on_area_icone_1_input_event"]
+[connection signal="mouse_entered" from="CanvasGroup/Area_icone_1" to="CanvasGroup/Area_icone_1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasGroup/Area_icone_1" to="CanvasGroup/Area_icone_1" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasGroup/Area_icone_2" to="." method="_on_area_icone_2_input_event"]
+[connection signal="mouse_entered" from="CanvasGroup/Area_icone_2" to="CanvasGroup/Area_icone_2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasGroup/Area_icone_2" to="CanvasGroup/Area_icone_2" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasGroup/Area_icone_3" to="." method="_on_area_icone_3_input_event"]
+[connection signal="mouse_entered" from="CanvasGroup/Area_icone_3" to="CanvasGroup/Area_icone_3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasGroup/Area_icone_3" to="CanvasGroup/Area_icone_3" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasGroup/Area_icone_4" to="." method="_on_area_icone_4_input_event"]
+[connection signal="mouse_entered" from="CanvasGroup/Area_icone_4" to="CanvasGroup/Area_icone_4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasGroup/Area_icone_4" to="CanvasGroup/Area_icone_4" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasGroup/Area_icone_5" to="." method="_on_area_icone_5_input_event"]
+[connection signal="mouse_entered" from="CanvasGroup/Area_icone_5" to="CanvasGroup/Area_icone_5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasGroup/Area_icone_5" to="CanvasGroup/Area_icone_5" method="_on_mouse_exited"]
+[connection signal="input_event" from="CanvasGroup/Area_icone_6" to="." method="_on_area_icone_6_input_event"]
+[connection signal="mouse_entered" from="CanvasGroup/Area_icone_6" to="CanvasGroup/Area_icone_6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasGroup/Area_icone_6" to="CanvasGroup/Area_icone_6" method="_on_mouse_exited"]

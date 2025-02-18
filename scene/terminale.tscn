@@ -1,0 +1,163 @@
+[gd_scene load_steps=24 format=3 uid="uid://cw75nkaksibd3"]
+
+[ext_resource type="Texture2D" uid="uid://daulmb4i0m3et" path="res://image/machines/terminale/terminale.png" id="1_fhp1j"]
+[ext_resource type="Script" path="res://scripte/terminale.gd" id="1_nd832"]
+[ext_resource type="Texture2D" uid="uid://btkacb12fhu50" path="res://image/écran_terminale/ecran.png" id="3_3q8e8"]
+[ext_resource type="Script" path="res://scripte/ressource.gd" id="4_qcuwr"]
+[ext_resource type="Texture2D" uid="uid://di6fey1r4xsqw" path="res://image/écran_terminale/icone_ressource.png" id="5_whbcb"]
+[ext_resource type="Texture2D" uid="uid://bv8gdvmn180u0" path="res://image/écran_terminale/ressource_fenetre/onglet_ressource.png" id="6_0ufl2"]
+[ext_resource type="Script" path="res://scripte/icone_bois.gd" id="7_as2ag"]
+[ext_resource type="Texture2D" uid="uid://carqyhfffkjn" path="res://image/écran_terminale/ressource_fenetre/icone_bois.png" id="8_sibul"]
+[ext_resource type="Script" path="res://scripte/icone_charbon.gd" id="9_r01bh"]
+[ext_resource type="Texture2D" uid="uid://dcqwhs3s71iiu" path="res://image/écran_terminale/ressource_fenetre/icone_charbon.png" id="10_h0v43"]
+[ext_resource type="Script" path="res://scripte/icone_fer.gd" id="11_m64fg"]
+[ext_resource type="Texture2D" uid="uid://dcd75vxa7rr85" path="res://image/écran_terminale/ressource_fenetre/icone_fer.png" id="12_xio88"]
+[ext_resource type="Script" path="res://scripte/icone_nitrate.gd" id="13_w41p6"]
+[ext_resource type="Texture2D" uid="uid://bdx61fnwv1uvv" path="res://image/écran_terminale/ressource_fenetre/icone_nitrate.png" id="14_ck0iy"]
+[ext_resource type="Script" path="res://scripte/button_annuler.gd" id="15_vwhuu"]
+[ext_resource type="Texture2D" uid="uid://boxq2bkoyhawv" path="res://image/écran_terminale/icone_quitter.png" id="16_u2hvr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qistd"]
+size = Vector2(129, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icqd4"]
+size = Vector2(141.429, 45.7143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1a12"]
+size = Vector2(144.286, 45.7143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxo3g"]
+size = Vector2(144.286, 45.7143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r7sx"]
+size = Vector2(142.857, 45.7143)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8apnu"]
+size = Vector2(142.857, 44.2857)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g7xq"]
+size = Vector2(142.857, 45.7143)
+
+[node name="terminale" type="Area2D"]
+script = ExtResource("1_nd832")
+
+[node name="Sprite-terminale" type="Sprite2D" parent="."]
+texture = ExtResource("1_fhp1j")
+
+[node name="Collision-terminale" type="CollisionShape2D" parent="."]
+visibility_layer = 11
+position = Vector2(0.5, 25.5)
+shape = SubResource("RectangleShape2D_qistd")
+debug_color = Color(0.901064, 0.220412, 0.55415, 0.42)
+
+[node name="écrans" type="CanvasGroup" parent="."]
+visible = false
+scale = Vector2(0.7, 0.7)
+
+[node name="écran_terminale" type="Sprite2D" parent="écrans"]
+z_index = 3
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_3q8e8")
+
+[node name="ressource" type="Area2D" parent="écrans/écran_terminale"]
+script = ExtResource("4_qcuwr")
+
+[node name="Sprite_boutton_ressource" type="Sprite2D" parent="écrans/écran_terminale/ressource"]
+position = Vector2(330, -11.4286)
+texture = ExtResource("5_whbcb")
+
+[node name="Collision_boutton_ressource" type="CollisionShape2D" parent="écrans/écran_terminale/ressource"]
+position = Vector2(330.714, -11.4286)
+shape = SubResource("RectangleShape2D_icqd4")
+debug_color = Color(0.100042, 0.648284, 3.85046e-07, 0.42)
+
+[node name="OngletRessource" type="Sprite2D" parent="écrans/écran_terminale/ressource"]
+visible = false
+position = Vector2(184.286, -17.1429)
+texture = ExtResource("6_0ufl2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="écrans/écran_terminale/ressource/OngletRessource"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="IconeBois" type="Area2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer"]
+position = Vector2(0, 44.2857)
+script = ExtResource("7_as2ag")
+
+[node name="SpriteIconeBois" type="Sprite2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois"]
+texture = ExtResource("8_sibul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois"]
+position = Vector2(3.05176e-05, 5.72205e-06)
+shape = SubResource("RectangleShape2D_k1a12")
+debug_color = Color(0.100042, 0.648284, 3.85046e-07, 0.42)
+
+[node name="IconeCharbon" type="Area2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer"]
+position = Vector2(3.05176e-05, 92.8571)
+script = ExtResource("9_r01bh")
+
+[node name="SpriteIconeCharbon" type="Sprite2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeCharbon"]
+texture = ExtResource("10_h0v43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeCharbon"]
+position = Vector2(0.714279, 0)
+shape = SubResource("RectangleShape2D_jxo3g")
+debug_color = Color(0.100042, 0.648284, 3.85046e-07, 0.42)
+
+[node name="IconeFer" type="Area2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer"]
+position = Vector2(3.05176e-05, 141.429)
+script = ExtResource("11_m64fg")
+
+[node name="SpriteIconeFer" type="Sprite2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeFer"]
+texture = ExtResource("12_xio88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeFer"]
+shape = SubResource("RectangleShape2D_3r7sx")
+debug_color = Color(0.100042, 0.648284, 3.85046e-07, 0.42)
+
+[node name="IconeNitrate" type="Area2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer"]
+position = Vector2(0, 191.429)
+script = ExtResource("13_w41p6")
+
+[node name="SpriteIconeNitrate" type="Sprite2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeNitrate"]
+position = Vector2(2.17983e-05, -1.42857)
+texture = ExtResource("14_ck0iy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeNitrate"]
+position = Vector2(2.39781e-05, -1.42857)
+shape = SubResource("RectangleShape2D_8apnu")
+debug_color = Color(0.100042, 0.648284, 3.85046e-07, 0.42)
+
+[node name="button_annuler" type="Area2D" parent="écrans/écran_terminale"]
+position = Vector2(-348.571, 185.714)
+script = ExtResource("15_vwhuu")
+metadata/_edit_group_ = true
+
+[node name="Sprite_button_annuler" type="Sprite2D" parent="écrans/écran_terminale/button_annuler"]
+texture = ExtResource("16_u2hvr")
+
+[node name="Collision_button_annuler" type="CollisionShape2D" parent="écrans/écran_terminale/button_annuler"]
+position = Vector2(8.17435e-06, -4.08718e-06)
+shape = SubResource("RectangleShape2D_0g7xq")
+debug_color = Color(0.100042, 0.648284, 3.85046e-07, 0.42)
+
+[connection signal="input_event" from="écrans/écran_terminale/ressource" to="écrans/écran_terminale/ressource" method="_on_input_event"]
+[connection signal="mouse_entered" from="écrans/écran_terminale/ressource" to="écrans/écran_terminale/ressource" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="écrans/écran_terminale/ressource" to="écrans/écran_terminale/ressource" method="_on_mouse_exited"]
+[connection signal="input_event" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois" method="_on_input_event"]
+[connection signal="item" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois" to="." method="_on_icone_bois_item"]
+[connection signal="mouse_entered" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeBois" method="_on_mouse_exited"]
+[connection signal="input_event" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeCharbon" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeCharbon" method="_on_input_event"]
+[connection signal="mouse_entered" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeCharbon" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeCharbon" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeCharbon" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeCharbon" method="_on_mouse_exited"]
+[connection signal="input_event" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeFer" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeFer" method="_on_input_event"]
+[connection signal="mouse_entered" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeFer" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeFer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeFer" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeFer" method="_on_mouse_exited"]
+[connection signal="input_event" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeNitrate" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeNitrate" method="_on_input_event"]
+[connection signal="mouse_entered" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeNitrate" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeNitrate" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeNitrate" to="écrans/écran_terminale/ressource/OngletRessource/VBoxContainer/IconeNitrate" method="_on_mouse_exited"]
+[connection signal="input_event" from="écrans/écran_terminale/button_annuler" to="écrans/écran_terminale/button_annuler" method="_on_input_event"]
+[connection signal="mouse_entered" from="écrans/écran_terminale/button_annuler" to="écrans/écran_terminale/button_annuler" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="écrans/écran_terminale/button_annuler" to="écrans/écran_terminale/button_annuler" method="_on_mouse_exited"]
+[connection signal="quitter" from="écrans/écran_terminale/button_annuler" to="." method="_on_button_annuler_quitter"]
