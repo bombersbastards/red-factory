@@ -34,6 +34,7 @@ shape = SubResource("RectangleShape2D_7tuhp")
 debug_color = Color(0.94431, 6.73831e-06, 0.597658, 0.42)
 
 [node name="craft_canvas" type="CanvasGroup" parent="."]
+visible = false
 
 [node name="area_fer" type="Area2D" parent="craft_canvas"]
 script = ExtResource("3_m2xou")

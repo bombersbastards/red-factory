@@ -11,6 +11,10 @@ signal fer_pris()
 signal charbon_pris()
 
 func _process(delta: float) -> void:
+	if fer and charbon :
+		$craft_canvas/area_validation.visible = true
+	else:
+		$craft_canvas/area_validation.visible = false
 	print(etat_inv)
 
 func _on_action(inv,item):
@@ -23,8 +27,7 @@ func _on_action(inv,item):
 		charbon = true
 		$Sprite_four.texture = load("res://image/machines/four/foure_plein.png")
 		emit_signal("charbon_poser")
-	if fer and charbon :
-		$craft_canvas/area_validation.visible = true
+
 	_update_texture()
 	
 
