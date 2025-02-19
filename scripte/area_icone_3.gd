@@ -1,8 +1,7 @@
 extends Area2D
 var icone 
-var texture_normale = preload("res://image/machines/etagere/ecran_selection/icone.png")
-var texture_hover = preload("res://image/machines/etagere/ecran_selection/icone_hover.png")
-
+var texture_normale = preload("res://image/hud_craft/icone.png")
+var texture_hover = preload("res://image/hud_craft/icone_hover.png")
 var item 
 
 var TEXTURE_ITEM = {

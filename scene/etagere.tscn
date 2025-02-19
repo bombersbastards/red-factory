@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dawpldxmw6ww4" path="res://image/machines/etagere/etagere.png" id="1_bu3as"]
 [ext_resource type="Script" path="res://scripte/etagere.gd" id="1_vq430"]
-[ext_resource type="Texture2D" uid="uid://bvc32jw7cvhi5" path="res://image/machines/etagere/ecran_selection/icone.png" id="3_a15jf"]
+[ext_resource type="Texture2D" uid="uid://bvc32jw7cvhi5" path="res://image/hud_craft/icone.png" id="3_a15jf"]
 [ext_resource type="Script" path="res://scripte/area_icone_1.gd" id="3_kydcr"]
 [ext_resource type="Script" path="res://scripte/area_icone_2.gd" id="5_p8s6k"]
 [ext_resource type="Script" path="res://scripte/area_icone_3.gd" id="6_4mqa4"]

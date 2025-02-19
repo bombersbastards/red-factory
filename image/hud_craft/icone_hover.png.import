@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvc32jw7cvhi5"
-path="res://.godot/imported/icone.png-b70a6c17c806b471591a5237a426aedf.ctex"
+uid="uid://cpbe14s1rmu2f"
+path="res://.godot/imported/icone_hover.png-457ff7c6daef79a21357210d8991b0ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/machines/etagere/ecran_selection/icone.png"
-dest_files=["res://.godot/imported/icone.png-b70a6c17c806b471591a5237a426aedf.ctex"]
+source_file="res://image/hud_craft/icone_hover.png"
+dest_files=["res://.godot/imported/icone_hover.png-457ff7c6daef79a21357210d8991b0ec.ctex"]
 
 [params]
 

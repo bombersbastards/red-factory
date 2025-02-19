@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjhlh0ihlwb8c"
-path="res://.godot/imported/icone_validation.png-88fdbf481daad1e3384b67db1484ddbf.ctex"
+uid="uid://brd1bmf5fm5tb"
+path="res://.godot/imported/icone_hover_validation.png-00e3821787a6f3a5cf5bd8622f7d2fb4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://image/machines/etagere/ecran_selection/icone_validation.png"
-dest_files=["res://.godot/imported/icone_validation.png-88fdbf481daad1e3384b67db1484ddbf.ctex"]
+source_file="res://image/hud_craft/icone_hover_validation.png"
+dest_files=["res://.godot/imported/icone_hover_validation.png-00e3821787a6f3a5cf5bd8622f7d2fb4.ctex"]
 
 [params]
 

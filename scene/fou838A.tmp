@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://scripte/four.gd" id="1_kq4bx"]
 [ext_resource type="Texture2D" uid="uid://dgt02qjl731x7" path="res://image/machines/four/foure_vide.png" id="2_rys37"]
-[ext_resource type="Texture2D" uid="uid://bvc32jw7cvhi5" path="res://image/hud_craft/icone.png" id="3_5g72d"]
+[ext_resource type="Texture2D" uid="uid://bvc32jw7cvhi5" path="res://image/hud_craft/craft/icone.png" id="3_5g72d"]
 [ext_resource type="Script" path="res://scripte/area_fer.gd" id="3_m2xou"]
 [ext_resource type="Texture2D" uid="uid://bjhlh0ihlwb8c" path="res://image/hud_craft/icone_validation.png" id="4_cxtqs"]
-[ext_resource type="Texture2D" uid="uid://ddo80lkfru72g" path="res://image/craft/ressource_premiere/fer.png" id="4_n0lr5"]
-[ext_resource type="Texture2D" uid="uid://dcldljwtlrsib" path="res://image/craft/ressource_premiere/charbon.png" id="5_fb3oi"]
+[ext_resource type="Texture2D" uid="uid://ddo80lkfru72g" path="res://image/hud_craft/craft/ressource_premiere/fer.png" id="4_n0lr5"]
+[ext_resource type="Texture2D" uid="uid://dcldljwtlrsib" path="res://image/hud_craft/craft/ressource_premiere/charbon.png" id="5_fb3oi"]
 [ext_resource type="Script" path="res://scripte/area_charbon.gd" id="6_jno3j"]
 [ext_resource type="Script" path="res://scene/area_validation.gd" id="8_i3kba"]
 [ext_resource type="PackedScene" uid="uid://cb36k2mtgndge" path="res://scene/chargement.tscn" id="10_v7qow"]
-[ext_resource type="Texture2D" uid="uid://bcv3er780w84e" path="res://image/craft/ressource transformer/lingot.png" id="11_tjmht"]
+[ext_resource type="Texture2D" uid="uid://bcv3er780w84e" path="res://image/hud_craft/craft/ressource transformer/lingot.png" id="11_tjmht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tuhp"]
 size = Vector2(128, 127)

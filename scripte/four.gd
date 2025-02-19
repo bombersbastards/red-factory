@@ -10,6 +10,10 @@ signal charbon_poser()
 signal fer_pris()
 signal charbon_pris()
 
+func _ready() -> void:
+	$craft_canvas/area_charbon.visible = false
+	$craft_canvas/area_fer.visible = false
+	
 func _process(delta: float) -> void:
 	if fer and charbon :
 		$craft_canvas/area_validation.visible = true
@@ -45,10 +49,12 @@ func _update_texture():
 		$craft_canvas/area_charbon/icone_item_charbon/icone_charbon.visible = false
 		
 	if charbon or fer :
-		$craft_canvas.visible = true
+		$craft_canvas/area_charbon.visible = true
+		$craft_canvas/area_fer.visible =true
 	elif fer == false and charbon == false :
-		$craft_canvas.visible = false
-
+		$craft_canvas/area_charbon.visible = false
+		$craft_canvas/area_fer.visible = false
+		
 func _on_area_fer_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and fer and not etat_inv :
 		emit_signal("fer_pris")
@@ -66,3 +72,15 @@ func _on_area_charbon_input_event(viewport: Node, event: InputEvent, shape_idx: 
 func _on_pelican_etat_inv(inv: bool) -> void:
 	etat_inv = inv
 	pass 
+
+func _on_area_validation_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		fer = false
+		charbon = false
+		_update_texture()
+		$craft_canvas/area_validation.visible = false
+		$craft_canvas/chargement.visible = true
+		$craft_canvas/chargement/Animation_chargement.play("chargement")
+		await $craft_canvas/chargement/Animation_chargement.animation_finished
+		$craft_canvas/Area_lingot.visible = true
+		
