@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1mo2i6mo3cgg"]
+[gd_scene load_steps=18 format=3 uid="uid://d1mo2i6mo3cgg"]
 
 [ext_resource type="Script" path="res://scripte/four.gd" id="1_kq4bx"]
 [ext_resource type="Texture2D" uid="uid://dgt02qjl731x7" path="res://image/machines/four/foure_vide.png" id="2_rys37"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripte/area_charbon.gd" id="6_jno3j"]
 [ext_resource type="Script" path="res://scene/area_validation.gd" id="8_i3kba"]
 [ext_resource type="PackedScene" uid="uid://cb36k2mtgndge" path="res://scene/chargement.tscn" id="10_v7qow"]
+[ext_resource type="Script" path="res://scene/area_lingot.gd" id="11_4ytlk"]
 [ext_resource type="Texture2D" uid="uid://bcv3er780w84e" path="res://image/craft/ressource transformer/lingot.png" id="11_tjmht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7tuhp"]
@@ -98,6 +99,7 @@ position = Vector2(0, -50)
 [node name="Area_lingot" type="Area2D" parent="craft_canvas"]
 visible = false
 position = Vector2(-1.1109, -83.7691)
+script = ExtResource("11_4ytlk")
 
 [node name="Collision_lingot" type="CollisionShape2D" parent="craft_canvas/Area_lingot"]
 position = Vector2(-0.389099, 0.269142)
@@ -112,6 +114,8 @@ position = Vector2(-0.889099, -9.2309)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_tjmht")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="input_event" from="craft_canvas/area_fer" to="." method="_on_area_fer_input_event"]
 [connection signal="mouse_entered" from="craft_canvas/area_fer" to="craft_canvas/area_fer" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="craft_canvas/area_fer" to="craft_canvas/area_fer" method="_on_mouse_exited"]
@@ -121,3 +125,5 @@ texture = ExtResource("11_tjmht")
 [connection signal="input_event" from="craft_canvas/area_validation" to="." method="_on_area_validation_input_event"]
 [connection signal="mouse_entered" from="craft_canvas/area_validation" to="craft_canvas/area_validation" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="craft_canvas/area_validation" to="craft_canvas/area_validation" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="craft_canvas/Area_lingot" to="craft_canvas/Area_lingot" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="craft_canvas/Area_lingot" to="craft_canvas/Area_lingot" method="_on_mouse_exited"]

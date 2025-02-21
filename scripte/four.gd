@@ -3,6 +3,7 @@ extends Area2D
 var etat_inv =false
 var fer = false
 var charbon = false
+var char_inside =false
 
 signal fer_poser()
 signal charbon_poser()
@@ -15,6 +16,7 @@ func _ready() -> void:
 	$craft_canvas/area_fer.visible = false
 	
 func _process(delta: float) -> void:
+	$craft_canvas.visible = char_inside
 	if fer and charbon :
 		$craft_canvas/area_validation.visible = true
 	else:
@@ -36,6 +38,9 @@ func _on_action(inv,item):
 	
 
 func _update_texture():
+
+		
+	
 	if fer == true:
 		$craft_canvas/area_fer/icone_item_fer/icone_fer.visible = true
 	else:
@@ -84,3 +89,15 @@ func _on_area_validation_input_event(viewport: Node, event: InputEvent, shape_id
 		await $craft_canvas/chargement/Animation_chargement.animation_finished
 		$craft_canvas/Area_lingot.visible = true
 		
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("perssonage"):
+		char_inside = true
+	pass 
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group("perssonage"):
+		char_inside = false
+	pass # Replace with function body.
+	
