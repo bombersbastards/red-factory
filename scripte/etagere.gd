@@ -2,6 +2,7 @@ extends Area2D
 
 var ITEM_1 =null
 var sprite_name = null
+var char_inside = false
 
 signal item_1(ITEM_1:String)
 signal item_2(ITEM_2:String)
@@ -43,6 +44,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	emit_signal("selc_possible",$CanvasGroup.visible)
+	$CanvasGroup.visible = char_inside
 	pass
 
 func _on_action(inv,item):
@@ -57,12 +59,8 @@ func _on_action(inv,item):
 				_update_texture(sprite.name)  # Mise à jour de la texture et émission du signal
 				print(ITEM_INSIDE)
 				break
+		
 
-	if item == null and $CanvasGroup.visible == false:
-		$CanvasGroup.visible = true
-	elif $CanvasGroup.visible == true:
-		$CanvasGroup.visible = false
-	
 		pass
 	
 func _update_texture(sprite_name: String):
@@ -82,7 +80,7 @@ func _update_texture(sprite_name: String):
 				emit_signal("item_6", ITEM_INSIDE[sprite_name]["nom"])
 				
 func _on_area_icone_1_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $BoxContainer/Sprite_item_1.texture!=null:
 		emit_signal("obj_pris",ITEM_INSIDE["Sprite_item_1"]["nom"])
 		$BoxContainer/Sprite_item_1.texture = null
 		_update_texture(sprite_name)
@@ -92,7 +90,7 @@ func _on_area_icone_1_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		$CanvasGroup.visible = false
 		
 func _on_area_icone_2_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $BoxContainer/Sprite_item_2.texture!=null:
 		emit_signal("obj_pris",ITEM_INSIDE["Sprite_item_2"]["nom"])
 		$BoxContainer/Sprite_item_2.texture = null
 		_update_texture(sprite_name)
@@ -103,7 +101,7 @@ func _on_area_icone_2_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		pass
 	pass 
 func _on_area_icone_3_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $BoxContainer/Sprite_item_3.texture!=null:
 		emit_signal("obj_pris",ITEM_INSIDE["Sprite_item_3"]["nom"])
 		$BoxContainer/Sprite_item_3.texture = null
 		_update_texture(sprite_name)
@@ -114,7 +112,7 @@ func _on_area_icone_3_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		pass
 	pass 
 func _on_area_icone_4_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $BoxContainer/Sprite_item_4.texture!=null:
 		emit_signal("obj_pris",ITEM_INSIDE["Sprite_item_4"]["nom"])
 		$BoxContainer/Sprite_item_4.texture = null
 		_update_texture(sprite_name)
@@ -125,7 +123,7 @@ func _on_area_icone_4_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		pass
 	pass 
 func _on_area_icone_5_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $BoxContainer/Sprite_item_5.texture!=null:
 		emit_signal("obj_pris",ITEM_INSIDE["Sprite_item_5"]["nom"])
 		$BoxContainer/Sprite_item_5.texture = null
 		_update_texture(sprite_name)
@@ -136,7 +134,7 @@ func _on_area_icone_5_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		pass
 	pass 
 func _on_area_icone_6_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and $BoxContainer/Sprite_item_6.texture!=null:
 		emit_signal("obj_pris",ITEM_INSIDE["Sprite_item_6"]["nom"])
 		$BoxContainer/Sprite_item_6.texture = null
 		_update_texture(sprite_name)
@@ -145,4 +143,16 @@ func _on_area_icone_6_input_event(viewport: Node, event: InputEvent, shape_idx: 
 		emit_signal("obj_remove_6")
 		$CanvasGroup.visible = false
 		pass
+	pass 
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("perssonage"):
+		char_inside = true
+		
+	pass 
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group("perssonage"):
+		char_inside = false
 	pass 

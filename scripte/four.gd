@@ -4,7 +4,7 @@ var etat_inv =false
 var fer = false
 var charbon = false
 var char_inside =false
-
+var fonctionnement = false
 signal fer_poser()
 signal charbon_poser()
 
@@ -25,11 +25,10 @@ func _process(delta: float) -> void:
 
 func _on_action(inv,item):
 	
-	if item == "fer" and fer == false:
+	if item == "fer" and fer == false and fonctionnement == false:
 		fer = true
 		emit_signal("fer_poser")
-		print("tu a poser le fer")
-	elif item == "charbon" and charbon == false :
+	elif item == "charbon" and charbon == false and fonctionnement == false :
 		charbon = true
 		$Sprite_four.texture = load("res://image/machines/four/foure_plein.png")
 		emit_signal("charbon_poser")
@@ -38,9 +37,6 @@ func _on_action(inv,item):
 	
 
 func _update_texture():
-
-		
-	
 	if fer == true:
 		$craft_canvas/area_fer/icone_item_fer/icone_fer.visible = true
 	else:
@@ -80,6 +76,7 @@ func _on_pelican_etat_inv(inv: bool) -> void:
 
 func _on_area_validation_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		fonctionnement = true
 		fer = false
 		charbon = false
 		_update_texture()
@@ -105,5 +102,6 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _on_area_lingot_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		fonctionnement = false
 		$craft_canvas/Area_lingot.visible = false
 		$craft_canvas/chargement.visible = false

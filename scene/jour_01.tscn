@@ -506,6 +506,8 @@ position = Vector2(3042, 509)
 [connection signal="charbon_pris" from="four" to="pelican" method="_on_four_charbon_pris"]
 [connection signal="fer_poser" from="four" to="pelican" method="_on_four_fer_poser"]
 [connection signal="fer_pris" from="four" to="pelican" method="_on_four_fer_pris"]
+[connection signal="body_entered" from="etagere" to="etagere" method="_on_body_entered"]
+[connection signal="body_exited" from="etagere" to="etagere" method="_on_body_exited"]
 [connection signal="obj_poser" from="etagere" to="pelican" method="_on_etagere_obj_poser"]
 [connection signal="obj_pris" from="etagere" to="pelican" method="_on_etagere_obj_pris"]
 [connection signal="selc_possible" from="etagere" to="." method="_on_etagere_selc_possible"]
