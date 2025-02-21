@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bws2j8wrsbx5w"]
+[gd_scene load_steps=18 format=4 uid="uid://bws2j8wrsbx5w"]
 
 [ext_resource type="Script" path="res://scripte/jour_01.gd" id="1_0xcx0"]
 [ext_resource type="Texture2D" uid="uid://dqmg470kfby7n" path="res://image/tile-set/tile_obj.png" id="1_ed26b"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cbh2btgoe3265" path="res://scene/monte_charge_bas.tscn" id="7_5ocfk"]
 [ext_resource type="PackedScene" uid="uid://d1mo2i6mo3cgg" path="res://scene/four.tscn" id="7_72tpj"]
 [ext_resource type="PackedScene" uid="uid://wq6ci84ng3il" path="res://scene/monte_charge_haut.tscn" id="8_ndhgv"]
-[ext_resource type="PackedScene" uid="uid://byc8enpidjje1" path="res://scene/bouton.tscn" id="9_r641k"]
 [ext_resource type="PackedScene" uid="uid://b0p06ncfjx8sb" path="res://scene/etagere.tscn" id="11_ninvx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xepec"]
@@ -481,10 +480,6 @@ scale = Vector2(2, 2)
 position = Vector2(2697, 559)
 scale = Vector2(2.2, 2.2)
 
-[node name="bouton" parent="." groups=["machine"] instance=ExtResource("9_r641k")]
-position = Vector2(3668, -192)
-scale = Vector2(2, 2)
-
 [node name="etagere" parent="." groups=["machine"] instance=ExtResource("11_ninvx")]
 position = Vector2(3400, 578)
 scale = Vector2(2, 2)
@@ -511,7 +506,6 @@ position = Vector2(3042, 509)
 [connection signal="charbon_pris" from="four" to="pelican" method="_on_four_charbon_pris"]
 [connection signal="fer_poser" from="four" to="pelican" method="_on_four_fer_poser"]
 [connection signal="fer_pris" from="four" to="pelican" method="_on_four_fer_pris"]
-[connection signal="appui" from="bouton" to="monte-charge_haut" method="_on_bouton_appui"]
 [connection signal="obj_poser" from="etagere" to="pelican" method="_on_etagere_obj_poser"]
 [connection signal="obj_pris" from="etagere" to="pelican" method="_on_etagere_obj_pris"]
 [connection signal="selc_possible" from="etagere" to="." method="_on_etagere_selc_possible"]

@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	pass
 func _on_action(inv,item):
 	ITEM = item
-	if inv == true and $item.texture == null :
+	if inv == true and $item.texture == null and autre_monte_charge==false :
 		$item.texture = load(TEXTURE_ITEM[item])
 		emit_signal("obj_poser")
 		$"monte-charge_anime".play("fermeture")

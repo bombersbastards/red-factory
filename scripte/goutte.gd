@@ -24,7 +24,6 @@ signal ecran(ecran_actif:bool)
 
 func _ready() -> void:
 	node_inter= {
-	"bouton":get_parent().get_node("bouton"),
 	"terminale": get_parent().get_node("terminale"),
 	"spawner": get_parent().get_node("spawner"),
 	"monte-charge_haut": get_parent().get_node("monte-charge_haut")
