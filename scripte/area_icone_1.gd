@@ -21,7 +21,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_etagere_item_1(ITEM_1: String) -> void:
+func _on_etagere_2_item_1(ITEM_1: String) -> void:
 	item.texture = load(TEXTURE_ITEM[ITEM_1])
 	item.scale = Vector2(0.5,0.5)
 	pass # Replace with function body.

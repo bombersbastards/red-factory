@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cb36k2mtgndge"]
 
-[ext_resource type="Texture2D" uid="uid://1cktdfu8b1uk" path="res://image/hud_craft/chargement/chargement_export_chargement.png" id="1_4ow81"]
+[ext_resource type="Texture2D" uid="uid://chnb8hnj4ii7d" path="res://image/hud_craft/chargement/chargement_export_chargement.png" id="1_4ow81"]
 [ext_resource type="Script" path="res://scene/chargement.gd" id="2_ue6gp"]
 
 [sub_resource type="Animation" id="Animation_7wg4s"]

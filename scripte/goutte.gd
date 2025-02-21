@@ -103,3 +103,13 @@ func inventaire_update(item):
 	else :
 		inv = false
 	
+
+
+func _on_etagere_2_obj_poser() -> void:
+	item = null
+	pass 
+
+
+func _on_etagere_2_obj_pris(nom_item: String) -> void:
+	item = nom_item
+	pass 

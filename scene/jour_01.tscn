@@ -473,13 +473,13 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(3902, -336)
 scale = Vector2(2, 2)
 
-[node name="four" parent="." groups=["machine"] instance=ExtResource("7_72tpj")]
-position = Vector2(2697, 559)
-scale = Vector2(2.2, 2.2)
-
 [node name="monte-charge_bas" parent="." groups=["machine"] instance=ExtResource("7_5ocfk")]
 position = Vector2(3909, 451)
 scale = Vector2(2, 2)
+
+[node name="four" parent="." groups=["machine"] instance=ExtResource("7_72tpj")]
+position = Vector2(2697, 559)
+scale = Vector2(2.2, 2.2)
 
 [node name="bouton" parent="." groups=["machine"] instance=ExtResource("9_r641k")]
 position = Vector2(3668, -192)
@@ -501,15 +501,16 @@ position = Vector2(3042, 509)
 [connection signal="obj_envoyer" from="monte-charge_haut" to="monte-charge_bas" method="_on_montecharge_haut_obj_envoyer"]
 [connection signal="obj_poser" from="monte-charge_haut" to="goutte" method="_on_montecharge_haut_obj_poser"]
 [connection signal="obj_pris" from="monte-charge_haut" to="goutte" method="_on_montecharge_haut_obj_pris"]
+[connection signal="body_entered" from="monte-charge_bas" to="monte-charge_bas" method="_on_body_entered"]
+[connection signal="body_exited" from="monte-charge_bas" to="monte-charge_bas" method="_on_body_exited"]
+[connection signal="etat_monte_charge" from="monte-charge_bas" to="monte-charge_haut" method="_on_montecharge_bas_etat_monte_charge"]
+[connection signal="obj_envoyer" from="monte-charge_bas" to="pelican" method="_on_montecharge_bas_obj_envoyer"]
+[connection signal="obj_poser" from="monte-charge_bas" to="pelican" method="_on_montecharge_bas_obj_poser"]
+[connection signal="obj_pris" from="monte-charge_bas" to="pelican" method="_on_montecharge_bas_obj_pris"]
 [connection signal="charbon_poser" from="four" to="pelican" method="_on_four_charbon_poser"]
 [connection signal="charbon_pris" from="four" to="pelican" method="_on_four_charbon_pris"]
 [connection signal="fer_poser" from="four" to="pelican" method="_on_four_fer_poser"]
 [connection signal="fer_pris" from="four" to="pelican" method="_on_four_fer_pris"]
-[connection signal="body_entered" from="monte-charge_bas" to="monte-charge_bas" method="_on_body_entered"]
-[connection signal="body_exited" from="monte-charge_bas" to="monte-charge_bas" method="_on_body_exited"]
-[connection signal="obj_envoyer" from="monte-charge_bas" to="pelican" method="_on_montecharge_bas_obj_envoyer"]
-[connection signal="obj_poser" from="monte-charge_bas" to="pelican" method="_on_montecharge_bas_obj_poser"]
-[connection signal="obj_pris" from="monte-charge_bas" to="pelican" method="_on_montecharge_bas_obj_pris"]
 [connection signal="appui" from="bouton" to="monte-charge_haut" method="_on_bouton_appui"]
 [connection signal="obj_poser" from="etagere" to="pelican" method="_on_etagere_obj_poser"]
 [connection signal="obj_pris" from="etagere" to="pelican" method="_on_etagere_obj_pris"]

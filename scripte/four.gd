@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		$craft_canvas/area_validation.visible = true
 	else:
 		$craft_canvas/area_validation.visible = false
-	print(etat_inv)
+	
 
 func _on_action(inv,item):
 	
