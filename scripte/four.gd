@@ -99,5 +99,11 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("perssonage"):
 		char_inside = false
-	pass # Replace with function body.
+	pass 
 	
+
+
+func _on_area_lingot_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		$craft_canvas/Area_lingot.visible = false
+		$craft_canvas/chargement.visible = false

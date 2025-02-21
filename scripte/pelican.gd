@@ -11,7 +11,8 @@ var TEXTURE_ITEM={
 	"bois":"res://image/craft/ressource_premiere/bois.png",
 	"charbon": "res://image/craft/ressource_premiere/charbon.png",
 	"fer":"res://image/craft/ressource_premiere/fer.png",
-	"nitrate":"res://image/craft/ressource_premiere/nitrate.png"
+	"nitrate":"res://image/craft/ressource_premiere/nitrate.png",
+	"lingot":"res://image/craft/ressource transformer/lingot.png"
 }
 var node_inter= {
 	

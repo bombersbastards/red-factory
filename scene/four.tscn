@@ -125,5 +125,6 @@ texture = ExtResource("11_tjmht")
 [connection signal="input_event" from="craft_canvas/area_validation" to="." method="_on_area_validation_input_event"]
 [connection signal="mouse_entered" from="craft_canvas/area_validation" to="craft_canvas/area_validation" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="craft_canvas/area_validation" to="craft_canvas/area_validation" method="_on_mouse_exited"]
+[connection signal="input_event" from="craft_canvas/Area_lingot" to="." method="_on_area_lingot_input_event"]
 [connection signal="mouse_entered" from="craft_canvas/Area_lingot" to="craft_canvas/Area_lingot" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="craft_canvas/Area_lingot" to="craft_canvas/Area_lingot" method="_on_mouse_exited"]
